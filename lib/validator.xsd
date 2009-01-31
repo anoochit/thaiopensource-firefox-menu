@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+#===================================================================#
+# Program: Easy Menu v. 1.0.3
+# Short description: a multi-browser automagic extension builder
+# Online resources: http://easymenu.googlepages.com/
+#                   https://launchpad.net/easymenu
+# File: validator.xsd
+# Date: 2008/08/27
+# Last modified: 2008/10/12
+# Copyright (c) 2008 Riccardo Coccioli (Volans) <easymenu@gmail.com>
+# License: GNU General Public License version 3
+# Full license notice: ./LICENSE
+#===================================================================#
+# Easy Menu is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published
+# by the Free Software Foundation, either version 3 of the License,
+# or (at your option) any later version.
+#
+# Easy Menu is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+# General Public License for more details.
+#
+# The copy of the GNU General Public License can be found here:
+# ./lib/GPLv3License.txt
+#
+# You should have received a copy of the GNU General Public License
+# along with Easy Menu. If not, see http://www.gnu.org/licenses/
+#===================================================================#
+-->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:annotation>
+		<xsd:documentation xml:lang="en"><![CDATA[
+			XML Schema used by Easy Menu to validate the XML input of the user.
+			Copyright (c) 2008 Riccardo Coccioli (Volans) <easymenu@gmail.com>
+			License: GNU General Public License version 3
+		]]></xsd:documentation>
+	</xsd:annotation>
+
+	<xsd:element name="easy-menu" type="emMainTree"/>
+	<xsd:complexType name="emMainTree">
+		<xsd:sequence>
+			<xsd:element name="extension" type="emExtensionTree"/>
+			<xsd:element name="main-menu" type="emMainMenuTree"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="emExtensionTree">
+		<xsd:sequence>
+			<xsd:element name="id" type="emIdType"/>
+			<xsd:element name="name" type="emOneLineString"/>
+			<xsd:element name="author-name" type="emOneLineString"/>
+			<xsd:element name="author-email" type="emEmailType"/>
+			<xsd:element name="author-url" type="xsd:anyURI" minOccurs="0"/>
+			<xsd:element name="homepageURL" type="xsd:anyURI"/>
+			<xsd:element name="icon" type="emOneLineString" minOccurs="0"/>
+			<xsd:element name="en-description" type="emMultiLineString"/>
+			<xsd:element name="en-icon-license" type="emMultiLineString" minOccurs="0"/>
+			<xsd:element name="localized" type="emLocalizedTree" maxOccurs="unbounded"/>
+			<xsd:element name="debian" type="emDebianTree" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="short-name" type="emShortNameType" use="required"/>
+		<xsd:attribute name="version" type="emVersionType" use="required"/>
+	</xsd:complexType>
+
+	<xsd:simpleType name="emOneLineString">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value=".+"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="emMultiLineString">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="1"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="emIdType">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[^@]+@([a-zA-Z0-9]([a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9]([a-zA-Z0-9-]*[a-zA-Z0-9])?|\{[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}\}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<xsd:simpleType name="emShortNameType">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[a-zA-Z0-9_-]+"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<xsd:simpleType name="emVersionType">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[a-zA-Z0-9-_.]+"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<xsd:simpleType name="emEmailType">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[a-zA-Z0-9!#$%&amp;'*+/=?\^_`{|}~-]+(\.[a-zA-Z0-9!#$%&amp;'*+/=?\^_`{|}~-]+)*@([a-zA-Z0-9]([a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9]([a-zA-Z0-9-]*[a-zA-Z0-9])?"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:complexType name="emLocalizedTree">
+		<xsd:sequence>
+			<xsd:element name="locale-name" type="emOneLineString"/>
+			<xsd:element name="name" type="emOneLineString" minOccurs="0"/>
+			<xsd:element name="description" type="emMultiLineString"/>
+			<xsd:element name="menu-changelog" type="emMenuChangelogTree" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="locale" type="xsd:language" use="required"/>
+	</xsd:complexType>
+
+	<xsd:complexType name="emMenuChangelogTree">
+		<xsd:sequence>
+			<xsd:element name="changelog-item" type="emChangelogItemType" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="emChangelogItemType">
+		<xsd:simpleContent>
+			<xsd:extension base="emMultiLineString">
+				<xsd:attribute name="version" type="emVersionType" use="required"/>
+				<xsd:attribute name="date" type="xsd:date" use="required"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+
+	<xsd:complexType name="emDebianTree">
+		<xsd:sequence>
+			<xsd:element name="package-name" type="emOneLineString"/>
+			<xsd:element name="maintainer" type="emOneLineString"/>
+			<xsd:element name="orig-maintainer" type="emOneLineString"/>
+			<xsd:element name="watch-dir" type="xsd:anyURI"/>
+			<xsd:element name="one-line-desc" type="emOneLineDescType"/>
+			<xsd:element name="bzr-branch" type="xsd:anyURI"/>
+			<xsd:element name="deb-changelog" type="emMultiLineString"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:simpleType name="emOneLineDescType">
+		<xsd:restriction base="emOneLineString">
+			<xsd:maxLength value="60"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:complexType name="emMainMenuTree">
+		<xsd:sequence>
+			<xsd:element name="bgcolor" type="emBgColorType" minOccurs="0"/>
+			<xsd:element name="icon" type="emOneLineString" minOccurs="0"/>
+			<xsd:element name="itemname" type="emItemNameType" maxOccurs="unbounded"/>
+			<xsd:element name="tooltiptext" type="emTooltiptextType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="content" type="emContentTree"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="emBgColorType">
+		<xsd:simpleContent>
+			<xsd:extension base="emColorType">
+				<xsd:attribute name="border" type="emColorType"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+
+	<xsd:simpleType name="emColorType">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[a-fA-F0-9]{3}|[a-fA-F0-9]{6}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:complexType name="emItemNameType">
+		<xsd:simpleContent>
+			<xsd:extension base="emOneLineString">
+				<xsd:attribute name="locale" type="xsd:language" use="required"/>
+				<xsd:attribute name="ak" type="emAccessKeyType"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+
+	<xsd:simpleType name="emAccessKeyType">
+		<xsd:restriction base="emOneLineString">
+			<xsd:length value="1"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:complexType name="emTooltiptextType">
+		<xsd:simpleContent>
+			<xsd:extension base="emOneLineString">
+				<xsd:attribute name="locale" type="xsd:language" use="required"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+
+	<xsd:complexType name="emContentTree">
+		<xsd:group ref="emContentsGroup" maxOccurs="unbounded"/>
+	</xsd:complexType>
+
+	<xsd:group name="emContentsGroup">
+		<xsd:choice>
+			<xsd:element name="menu" type="emMenuTree"/>
+			<xsd:element name="mailmenu" type="emMailMenuTree"/>
+			<xsd:element name="menuitem" type="emMenuItemType"/>
+			<xsd:element name="searchitem" type="emSearchItemType"/>
+			<xsd:element name="customitem" type="emCustomItemType"/>
+			<xsd:element name="menuseparator" type="emStyleType"/>
+		</xsd:choice>
+	</xsd:group>
+
+	<xsd:complexType name="emMenuTree">
+		<xsd:sequence>
+			<xsd:element name="bgcolor" type="emBgColorType" minOccurs="0"/>
+			<xsd:element name="style" type="emStyleType" minOccurs="0"/>
+			<xsd:element name="icon" type="emOneLineString" minOccurs="0"/>
+			<xsd:element name="itemname" type="emItemNameType" maxOccurs="unbounded"/>
+			<xsd:element name="tooltiptext" type="emTooltiptextType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="content" type="emContentTree"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="emStyleType">
+		<xsd:attribute name="bold" type="emTrueType"/>
+		<xsd:attribute name="color" type="emColorType"/>
+		<xsd:attribute name="bg_col" type="emColorType"/>
+	</xsd:complexType>
+
+	<xsd:simpleType name="emTrueType">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[tT][rR][uU][eE]"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:complexType name="emMailMenuTree">
+		<xsd:sequence>
+			<xsd:element name="bgcolor" type="emBgColorType" minOccurs="0"/>
+			<xsd:element name="style" type="emStyleType" minOccurs="0"/>
+			<xsd:element name="icon" type="emOneLineString" minOccurs="0"/>
+			<xsd:element name="url" type="xsd:anyURI" minOccurs="0"/>
+			<xsd:element name="itemname" type="emItemNameType" maxOccurs="unbounded"/>
+			<xsd:element name="tooltiptext" type="emTooltiptextType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="label" type="emLabelType" maxOccurs="unbounded"/>
+			<xsd:element name="thread" type="emItemNameType" maxOccurs="unbounded"/>
+			<xsd:element name="subject" type="emItemNameType" maxOccurs="unbounded"/>
+			<xsd:element name="author" type="emItemNameType" maxOccurs="unbounded"/>
+			<xsd:element name="date" type="emItemNameType" maxOccurs="unbounded" nillable="true"/>
+		</xsd:sequence>
+		<xsd:attribute name="icons" type="emTrueType"/>
+	</xsd:complexType>
+
+	<xsd:complexType name="emLabelType">
+		<xsd:simpleContent>
+			<xsd:extension base="emOneLineString">
+				<xsd:attribute name="locale" type="xsd:language" use="required"/>
+				<xsd:attribute name="bold" type="emTrueType"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+
+	<xsd:complexType name="emMenuItemType">
+		<xsd:sequence>
+			<xsd:element name="style" type="emStyleType" minOccurs="0"/>
+			<xsd:element name="icon" type="emOneLineString" minOccurs="0"/>
+			<xsd:element name="url" type="xsd:anyURI" minOccurs="0"/>
+			<xsd:element name="itemname" type="emItemNameType" maxOccurs="unbounded"/>
+			<xsd:element name="tooltiptext" type="emTooltiptextType" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="emSearchItemType">
+		<xsd:sequence>
+			<xsd:element name="style" type="emStyleType" minOccurs="0"/>
+			<xsd:element name="icon" type="emOneLineString" minOccurs="0"/>
+			<xsd:element name="url" type="xsd:anyURI" minOccurs="0"/>
+			<xsd:element name="itemname" type="emItemNameType" maxOccurs="unbounded"/>
+			<xsd:element name="tooltiptext" type="emTooltiptextType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="searchlabel" type="emTooltiptextType" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="emCustomItemType">
+		<xsd:sequence>
+			<xsd:element name="style" type="emStyleType" minOccurs="0"/>
+			<xsd:element name="icon" type="emOneLineString" minOccurs="0"/>
+			<xsd:element name="url" type="xsd:anyURI" minOccurs="0"/>
+			<xsd:element name="itemname" type="emItemNameType" maxOccurs="unbounded"/>
+			<xsd:element name="tooltiptext" type="emTooltiptextType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="customlabel" type="emTooltiptextType" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

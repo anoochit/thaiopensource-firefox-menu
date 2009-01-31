@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+#===================================================================#
+# Program: Easy Menu v. 1.0.3
+# Short description: a multi-browser automagic extension builder
+# Online resources: http://easymenu.googlepages.com/
+#                   https://launchpad.net/easymenu
+# File: testmenu.py
+# Date: 2008/08/27
+# Last modified: 2008/10/12
+# Copyright (c) 2008 Riccardo Coccioli (Volans) <easymenu@gmail.com>
+# License: GNU General Public License version 3
+# Full license notice: ./lib/LICENSE
+#===================================================================#
+# Easy Menu is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published
+# by the Free Software Foundation, either version 3 of the License,
+# or (at your option) any later version.
+#
+# Easy Menu is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+# General Public License for more details.
+#
+# The copy of the GNU General Public License can be found here:
+# ./lib/GPLv3License.txt
+#
+# You should have received a copy of the GNU General Public License
+# along with Easy Menu. If not, see http://www.gnu.org/licenses/
+#===================================================================#
+-->
+
+<easy-menu>
+	<extension short-name="test-menu" version="0.0.9">
+		<id>{84f12230-d3b4-4fd2-8e57-077f94ea76eb}</id>
+		<name>A test menu</name>
+		<author-name>Test Author</author-name>
+		<author-email>author@test.com</author-email>
+		<author-url>http://www.author.com/about</author-url>
+		<homepageURL>http://www.author.com/test-menu</homepageURL>
+		<icon>testlogo</icon>
+		<en-description><![CDATA[Brief English description of the menu. This menu is for testing purposes only, as an example usage of the program Easy Menu.]]></en-description>
+		<en-icon-license><![CDATA[test01.png, test02.png owned by Test Inc.
+test.png released under the terms of the CC-by-sa license]]></en-icon-license>
+		<localized locale="en-US">
+			<locale-name>English (US)</locale-name>
+			<description><![CDATA[Brief en-US description of the menu. This menu is for testing purposes only, as an example usage of the program Easy Menu.]]></description>
+			<menu-changelog>
+				<changelog-item version="0.0.9" date="2008-06-12"><![CDATA[ - Added sub menu]]></changelog-item>
+				<changelog-item version="0.0.8" date="2008-04-12"><![CDATA[ - First public release]]></changelog-item>
+			</menu-changelog>
+		</localized>
+		<localized locale="it-IT">
+			<locale-name>Italian (IT)</locale-name>
+			<name>Un menu di test</name>
+			<description><![CDATA[Breve descrizione it-IT del menu. Questo menu ha solo finalità di testing del progamma Easy Menu]]></description>
+			<menu-changelog>
+				<changelog-item version="0.0.9" date="2008-06-12"><![CDATA[ - Aggiunto sottomenu]]></changelog-item>
+				<changelog-item version="0.0.8" date="2008-04-12"><![CDATA[ - Prima release pubblica]]></changelog-item>
+			</menu-changelog>
+		</localized>
+		<debian>
+			<package-name>test-menu</package-name>
+			<maintainer>Maintainer &lt;maintainer@distro.org&gt;</maintainer>
+			<orig-maintainer><![CDATA[Original Maintainer <orig_maintainer@distro.org>]]></orig-maintainer>
+			<watch-dir>http://www.author.com/test-menu/sources/</watch-dir>
+			<one-line-desc>Brief en-US description max 60 characters</one-line-desc>
+			<bzr-branch>https://code.launchpad.net/~ubuntu-dev/firefox-extensions/test-menu.ubuntu</bzr-branch>
+			<deb-changelog><![CDATA[test-menu (0.0.9-0ubuntu1) hardy; urgency=low
+
+  * New upstream version (LP: #222222)
+
+ -- Original Maintainer <orig_maintainer@distro.org>  Thu, 12 Jun 2008 13:00:25 +0200
+
+test-menu (0.0.8-0ubuntu1) hardy; urgency=low
+
+  * Initial release (LP: #111111)
+
+ -- Original Maintainer <orig_maintainer@distro.org>  Sat, 12 Apr 2008 10:00:48 +0200]]></deb-changelog>
+		</debian>
+	</extension>
+	<main-menu>
+		<icon>test0</icon>
+		<itemname locale="en-US" ak="T">Test Menu</itemname>
+		<itemname locale="it-IT" ak="M">Menu di Test</itemname>
+		<tooltiptext locale="en-US">An example menu</tooltiptext>
+		<tooltiptext locale="it-IT">Un menu di esempio</tooltiptext>
+		<content>
+			<menuitem>
+				<style bold="true" />
+				<url>http://easymenu.googlepage.com/</url>
+				<itemname locale="en-US" ak="E">Easy Menu</itemname>
+				<itemname locale="it-IT" ak="E">Easy Menu</itemname>
+				<tooltiptext locale="en-US">An example item</tooltiptext>
+				<tooltiptext locale="it-IT">Un elemento di esempio</tooltiptext>
+			</menuitem>
+			<menuitem>
+				<url>https://launchpad.net/easymenu</url>
+				<itemname locale="en-US" ak="L">Easy Menu on Launchpad</itemname>
+				<itemname locale="it-IT" ak="L">Easy Menu su Launchpad</itemname>
+			</menuitem>
+			<menuseparator />
+			<mailmenu icons="true">
+				<bgcolor border="b6a391">fea</bgcolor>
+				<style bold="true" color="cf1d1d" bg_col="ffc" />
+				<url>http://mail.python.org/pipermail/mailman-announce/</url>
+				<itemname locale="en-US" ak="M">Mailman Mailing list</itemname>
+				<itemname locale="it-IT" ak="M">Mailing list di Mailman</itemname>
+				<tooltiptext locale="en-US">An example mail menu</tooltiptext>
+				<tooltiptext locale="it-IT">Un 'mail menu' di esempio</tooltiptext>
+				<label locale="en-US" bold="true">Last month ordered by:</label>
+				<label locale="it-IT" bold="true">Ultimo mese ordinato per:</label>
+				<thread locale="en-US" ak="T">Thread</thread>
+				<thread locale="it-IT" ak="D">Discussione</thread>
+				<subject locale="en-US" ak="S">Subject</subject>
+				<subject locale="it-IT" ak="S">Soggetto</subject>
+				<author locale="en-US" ak="A">Author</author>
+				<author locale="it-IT" ak="A">Autore</author>
+				<date locale="en-US" ak="D">Date</date>
+				<date locale="it-IT" ak="a">Data</date>
+			</mailmenu>
+			<menu>
+				<bgcolor border="b6a391">cdf</bgcolor>
+				<style bg_col="cdf" />
+				<icon>test1</icon>
+				<itemname locale="en-US" ak="S">A Sub Menu</itemname>
+				<itemname locale="it-IT" ak="S">Un Sottomenu</itemname>
+				<content>
+					<menuitem>
+						<icon>test1</icon>
+						<url>http://www.ubuntu.com/</url>
+						<itemname locale="en-US" ak="U">Ubuntu Linux</itemname>
+						<itemname locale="it-IT" ak="U">Ubuntu Linux</itemname>
+					</menuitem>
+					<menu>
+						<itemname locale="en-US" ak="S">Another Sub Menu</itemname>
+						<itemname locale="it-IT" ak="S">Un ulteriore Sottomenu</itemname>
+						<content>
+							<menuitem>
+								<icon>test1</icon>
+								<url>http://addons.mozilla.org/</url>
+								<itemname locale="en-US" ak="A">Mozilla Addons site</itemname>
+								<itemname locale="it-IT" ak="A">Sito degli Addons di Mozilla</itemname>
+							</menuitem>
+						</content>
+					</menu>
+				</content>
+			</menu>
+			<menuseparator />
+			<customitem>
+				<url>https://launchpad.net/~</url>
+				<itemname locale="en-US" ak="P">Personal Page on Launchpad</itemname>
+				<itemname locale="it-IT" ak="P">Profilo su Launchpad</itemname>
+				<tooltiptext locale="en-US">An example custom item</tooltiptext>
+				<tooltiptext locale="it-IT">Una voce personalizzata di esempio</tooltiptext>
+				<customlabel locale="en-US">Insert the name of the personal page on Launchpad</customlabel>
+				<customlabel locale="it-IT">Inserire il nome della pagina personale su Launchpad</customlabel>
+			</customitem>
+			<searchitem>
+				<url>https://launchpad.net/+search?field.text=</url>
+				<itemname locale="en-US" ak="S">Launchpad search example</itemname>
+				<itemname locale="it-IT" ak="r">Esempio di ricerca su Launchpad</itemname>
+				<tooltiptext locale="en-US">An example search item</tooltiptext>
+				<tooltiptext locale="it-IT">Una voce di ricerca di esempio</tooltiptext>
+				<searchlabel locale="en-US">Search on Launchpad site</searchlabel>
+				<searchlabel locale="it-IT">Ricerca sul sito Launchpad</searchlabel>
+			</searchitem>
+			<menuitem>
+				<icon>test2</icon>
+				<url>http://www.python.org/</url>
+				<itemname locale="en-US" ak="y">Python.org</itemname>
+				<itemname locale="it-IT" ak="y">Python.org</itemname>
+			</menuitem>
+		</content>
+	</main-menu>
+</easy-menu>

@@ -1,0 +1,118 @@
+#===================================================================#
+# Program: Easy Menu v. 1.0.3
+# Short description: a multi-browser automagic extension builder
+# Online resources: http://easymenu.googlepages.com/
+#                   https://launchpad.net/easymenu
+# File: CHANGELOG
+# Date: 2008/08/27
+# Last modified: 2008/10/12
+# Copyright (c) 2008 Riccardo Coccioli (Volans) <easymenu@gmail.com>
+# License: GNU General Public License version 3
+# Full license notice: ./LICENSE
+#===================================================================#
+# Easy Menu is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published
+# by the Free Software Foundation, either version 3 of the License,
+# or (at your option) any later version.
+#
+# Easy Menu is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+# General Public License for more details.
+#
+# The copy of the GNU General Public License can be found here:
+# ./lib/GPLv3License.txt
+#
+# You should have received a copy of the GNU General Public License
+# along with Easy Menu. If not, see http://www.gnu.org/licenses/
+#===================================================================#
+
+
+                           Easy Menu Changelog
+
+1.0.3 - 2008/10/12
+-------------------------------------------------------------------------
+ - Bugfix: the 'Options...' item was not hidden when the relative
+   preference was unchecked. Only the menu separator was correctly hidden
+=========================================================================
+
+1.0.2 - 2008/10/11
+-------------------------------------------------------------------------
+ - Bugfix of a misleading error message when checking available and
+   required icons (thanks to JaiBee)
+ - Improved the required and available icons checks for logo icon and
+   mailing list sub-menu icons
+=========================================================================
+
+1.0.1 - 2008/10/05
+-------------------------------------------------------------------------
+ - Bugfix of an encoding problem for DTD generated files. (LP: #278085)
+=========================================================================
+
+1.0.0 - 2008/09/24
+-------------------------------------------------------------------------
+ - Improvements on the XSD validation for single and multiline strings.
+ - Removal of some validation checks done in the code that now are done
+   directly in the XSD validation process. (the transition from DTD
+   validation to XSD validation was suggested by Aldo Armiento)
+ - Internal transition in the management of the custom pages from
+   dictionaries (unordered) to list of tuples (ordered). (LP: #263674)
+ - Extension's ID can now be email address strings as well as UUID for
+   a full compatibility with the Mozilla Developer Center documentation.
+   (as suggested by JaiBee).
+ - Better and more rigorous email address validation check
+ - Bugfix various
+=========================================================================
+
+1.0rc1 - 2008/08/27
+-------------------------------------------------------------------------
+ - Added the possibility to set an icon for the 'mailmenu' tags
+ - Improvement of regular expressions that provide some additional
+   validation of the XML input
+ - Added feature: the specification of the tooltiptext in every allowed
+   item and menu is made feasible (as suggested by Meisok).
+ - Review of the Doc string of some functions
+ - Changed the comment character in the '.properties' files
+ - Transition from the external xml.dom library to the xml.etree
+   ElementTree standard library for the whole project.
+ - Transition from the external xml.parsers.xmlproc library to the lxml
+   external library for the DTD input validation.
+   (The only external requirement is now lxml instead of PyXml)
+ - Transition from the DTD validation to the XMLSchema (XSD) validation
+ - Simplified some checks on the XML input that now are already checked
+   by the XSD validation
+ - Simplified parsing of background and border colors on menus using a
+   common function
+ - Changed the preamble of extension's files
+ - Added feature: the '--test' ('-t') command line option was added to
+   allow to only check the validity of the XML input without any file
+   generation (as suggested by Andrea Corbellini).
+=========================================================================
+
+1.0beta3 - 2008/08/08
+-------------------------------------------------------------------------
+ - Bugfix of an encoding issue in the .dtd and .properties files
+ - Bugfix in the example XML file
+ - Removed full stop at the end of error lines output
+ - Changed the quoting in the whole project, now single quote is used
+ - Optimization of some code related to the extension logo
+ - Added a try-except that was left commented
+ - Modified the import lines according to PEP 8 Style Guide
+=========================================================================
+
+1.0beta2 - 2008/07/14
+-------------------------------------------------------------------------
+ - Added this Changelog
+ - Better parameters management according to the Andrea Corbellini
+   suggestion
+ - Optimization of the 'setCompatibilityMaxVersion' function
+ - Bugfix of an issue in the 'compatibility' option
+ - Bugfix of localized files building process
+ - Change of the text printed with the --version option
+ - Merge of Andrea Corbellini 2008/07/09 merge proposal
+=========================================================================
+
+1.0beta - 2008/07/07
+-------------------------------------------------------------------------
+ - First public release
+=========================================================================
