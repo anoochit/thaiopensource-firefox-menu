@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+#===================================================================#
+# Program: ThaiOpenSource Menu v. 1.0.3
+# Short description: Firefox extention for ThaiOpenSource.Org.
+# Online resources: http://code.google.com/p/thaiopensource-firefox-menu/
+#                  
+# File: thaiopensource-menu.py
+# Date: 2009/02/01
+# Last modified: 2009/02/01
+# Copyright (c) 2009 Anuchit Chalothorn <anoochit@gmail.com>
+# License: GNU General Public License version 3
+# Full license notice: ./lib/LICENSE
+#===================================================================#
+# ThaiOpenSource Menu is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published
+# by the Free Software Foundation, either version 3 of the License,
+# or (at your option) any later version.
+#
+# ThaiOpenSource Menu is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+# General Public License for more details.
+#
+# The copy of the GNU General Public License can be found here:
+# ./lib/GPLv3License.txt
+#
+# You should have received a copy of the GNU General Public License
+# along with Easy Menu. If not, see http://www.gnu.org/licenses/
+#===================================================================#
+-->
+
+<easy-menu>
+	<extension short-name="thaiopensource-menu" version="1.0.0">
+		<id>{84f12230-d3b4-4fd2-8e57-077f94ea76eb}</id>
+		<name>Thai Open Source</name>
+		<author-name>Anuchit Chalothorn</author-name>
+		<author-email>anoochit@gmail.com</author-email>
+		<author-url>http://anoochit.googlepages.com</author-url>
+		<homepageURL>http://code.google.com/p/thaiopensource-firefox-menu/</homepageURL>
+		<icon>thaiopensource-logo</icon>
+		<en-description><![CDATA[Thai Open Source menu firefox extention is the easy way to access to Thai Open Source dot Org web site.]]></en-description>
+		<en-icon-license><![CDATA[thaiopensource-logo.png owned by Thai Open Source dot Org. released under the terms of the CC-by-sa license]]></en-icon-license>
+		<localized locale="en-US">
+			<locale-name>English (US)</locale-name>
+			<description><![CDATA[Thai Open Source menu firefox extention is the easy way to access to Thai Open Source dot Org web site.]]></description>
+			<menu-changelog>
+				<changelog-item version="1.0" date="2009-01-01"><![CDATA[ - Initial release]]></changelog-item>
+			</menu-changelog>
+		</localized>
+		<localized locale="th-TH">
+			<locale-name>Thai (TH)</locale-name>
+			<name>ไทยโอเพนซอร์ส</name>
+			<description><![CDATA[เข้าเว็บไทยโอเพนซอร์สง่ายๆ ด้วย ไทยโอเพนซอร์สเมนู]]></description>
+			<menu-changelog>
+				<changelog-item version="1.0" date="2009-01-01"><![CDATA[ - ออกรุ่นแรก]]></changelog-item>
+			</menu-changelog>
+		</localized>
+		<debian>
+			<package-name>thaiopensource-menu</package-name>
+			<maintainer>Maintainer &lt;anoochit@gmail.com&gt;</maintainer>
+			<orig-maintainer><![CDATA[Anuchit Chalothorn <anoochit@gmail.com>]]></orig-maintainer>
+			<watch-dir>http://code.google.com/p/thaiopensource-firefox-menu/</watch-dir>
+			<one-line-desc>  </one-line-desc>
+			<bzr-branch>https://code.launchpad.net/~anuchit/clubdistro/anoochit-firefox-extension</bzr-branch>
+			<deb-changelog><![CDATA[thaiopensource-menu (1.0-0ubuntu1) intrepid; urgency=low
+  * Initail version
+ -- Anuchit Chalothorn <anoochit@gmail.com  Sun, 01 Feb 2009 08:06:26 +0700 
+]]>
+			</deb-changelog>
+		</debian>
+	</extension>
+	<main-menu>
+		<icon>im-msn</icon>
+		<itemname locale="en-US" ak="T">ThaiOpenSource.org</itemname>
+		<itemname locale="th-TH" ak="M">ไทยโอเพนซอร์ส</itemname>
+		<tooltiptext locale="en-US">Thai Open Source Menu</tooltiptext>
+		<tooltiptext locale="th-TH">เมนูไทยโอเพนซอร์ส</tooltiptext>
+		<content>
+			<menuitem>
+				<icon>go-home</icon>
+				<url>http://www.thaiopensource.org</url>
+				<itemname locale="en-US" ak="H">Home</itemname>
+				<itemname locale="th-TH" ak="ห">หน้าหลัก</itemname>
+				<tooltiptext locale="en-US">Thai Open Source Home's</tooltiptext>
+				<tooltiptext locale="th-TH">หน้าหลักไทยโอเพนซอร์ส</tooltiptext>
+			</menuitem>	
+			<menuseparator />		
+			<menuitem >
+				<icon>x-office-document</icon>
+				<url>http://www.thaiopensource.org/cat/news</url>
+				<itemname locale="en-US" ak="N">News</itemname>
+				<itemname locale="th-TH" ak="ข">ข่าว</itemname>
+				<tooltiptext locale="en-US">Hot News</tooltiptext>
+				<tooltiptext locale="th-TH">ข่าวร้อน</tooltiptext>
+			</menuitem>
+			<menuitem >
+				<icon>x-office-presentation</icon>
+				<url>http://www.thaiopensource.org/cat/review</url>
+				<itemname locale="en-US" ak="E">Review</itemname>
+				<itemname locale="th-TH" ak="ร">รีวิว</itemname>
+				<tooltiptext locale="en-US">Review</tooltiptext>
+				<tooltiptext locale="th-TH">รีวิว</tooltiptext>
+			</menuitem>			
+			<menuitem >
+				<icon>text-x-script</icon>
+				<url>http://www.thaiopensource.org/cat/howto</url>
+				<itemname locale="en-US" ak="H">How-To</itemname>
+				<itemname locale="th-TH" ak="H">How-To</itemname>
+				<tooltiptext locale="en-US">How-to</tooltiptext>
+				<tooltiptext locale="th-TH">How-To</tooltiptext>
+			</menuitem>			
+			<menuitem >
+				<icon>audio-input-microphone</icon>
+				<url>http://www.thaiopensource.org/cat/interview</url>
+				<itemname locale="en-US" ak="I">Interview</itemname>
+				<itemname locale="th-TH" ak="บ">บทสัมภาษณ์</itemname>
+				<tooltiptext locale="en-US">Interview</tooltiptext>
+				<tooltiptext locale="th-TH">บทสัมภาษณ์</tooltiptext>
+			</menuitem>			
+			<menuitem >
+				<icon>x-office-drawing</icon>
+				<url>http://www.thaiopensource.org/cat/successstory</url>
+				<itemname locale="en-US" ak="S">Sucess Story</itemname>
+				<itemname locale="th-TH" ak="ล">เรื่องเล่าความสำเร็จ</itemname>
+				<tooltiptext locale="en-US">Sucess Story</tooltiptext>
+				<tooltiptext locale="th-TH">เรื่องเล่าความสำเร็จ</tooltiptext>
+			</menuitem>		
+			<menuitem >
+				<icon>text-x-generic</icon>
+				<url>http://www.thaiopensource.org/cat/articles</url>
+				<itemname locale="en-US" ak="A">Article</itemname>
+				<itemname locale="th-TH" ak="บ">บทความ</itemname>
+				<tooltiptext locale="en-US">Article</tooltiptext>
+				<tooltiptext locale="th-TH">บทความ</tooltiptext>
+			</menuitem>	
+			<menuitem >
+				<icon>applications-utilities</icon>
+				<url>http://www.thaiopensource.org/cat/opinion</url>
+				<itemname locale="en-US" ak="O">Opinion</itemname>
+				<itemname locale="th-TH" ak="า">ความคิดเห็น</itemname>
+				<tooltiptext locale="en-US">Opinion in F/OSS and non-F/OSS</tooltiptext>
+				<tooltiptext locale="th-TH">ความคิดเห็น</tooltiptext>
+			</menuitem>								
+			<menuitem >
+				<icon>applications-games</icon>
+				<url>http://www.thaiopensource.org/cat/event</url>
+				<itemname locale="en-US" ak="V">Event and Seminar</itemname>
+				<itemname locale="th-TH" ak="น">นิทรรศการและสัมมนา</itemname>
+				<tooltiptext locale="en-US">F/OSS event and seminar</tooltiptext>
+				<tooltiptext locale="th-TH">นิทรรศการและสัมนา</tooltiptext>
+			</menuitem>		
+			<menuitem >
+				<icon>mail-send</icon>
+				<url>http://www.thaiopensource.org/gallery</url>
+				<itemname locale="en-US" ak="G">Gallery</itemname>
+				<itemname locale="th-TH" ak="ภ">ห้องภาพ</itemname>
+				<tooltiptext locale="en-US">F/OSS gallery</tooltiptext>
+				<tooltiptext locale="th-TH">ห้องภาพกิจกรรม สัมมนา</tooltiptext>
+			</menuitem>			
+			<menuitem >
+				<icon>applications-multimedia</icon>
+				<url>http://www.thaiopensource.org/cat/media</url>
+				<itemname locale="en-US" ak="M">Media</itemname>
+				<itemname locale="th-TH" ak="ม">มัลติมีเดีย</itemname>
+				<tooltiptext locale="en-US">F/OSS media</tooltiptext>
+				<tooltiptext locale="th-TH">สื่อมัลติมีเดีย</tooltiptext>
+			</menuitem>		
+			<menuitem >
+				<icon>x-office-address-book</icon>
+				<url>http://www.thaiopensource.org/cat/directory</url>
+				<itemname locale="en-US" ak="D">Directory</itemname>
+				<itemname locale="th-TH" ak="ด">ไดเรคทอรี</itemname>
+				<tooltiptext locale="en-US">F/OSS directory</tooltiptext>
+				<tooltiptext locale="th-TH">ไดเรคทอรี</tooltiptext>
+			</menuitem>			
+			<menuitem >
+				<icon>document-save</icon>
+				<url>http://www.thaiopensource.org/cat/download</url>
+				<itemname locale="en-US" ak="n">Download</itemname>
+				<itemname locale="th-TH" ak="น">ดาวน์โหลด</itemname>
+				<tooltiptext locale="en-US">F/OSS download</tooltiptext>
+				<tooltiptext locale="th-TH">ดาวน์โหลด</tooltiptext>
+			</menuitem>		
+			<menuitem >
+				<icon>applications-internet</icon>
+				<url>http://www.thaiopensource.org/cat/link</url>
+				<itemname locale="en-US" ak="L">Link</itemname>
+				<itemname locale="th-TH" ak="ว">เว็บไซต์ที่น่าสนใจ</itemname>
+				<tooltiptext locale="en-US">F/OSS Link</tooltiptext>
+				<tooltiptext locale="th-TH">เว็บไซต์ที่น่าสนใจ</tooltiptext>
+			</menuitem>		
+			<menuitem >
+				<icon>help-faq</icon>
+				<url>http://www.thaiopensource.org/cat/faq</url>
+				<itemname locale="en-US" ak="Q">F.A.Q.</itemname>
+				<itemname locale="th-TH" ak="ถ">คำถามที่พบบ่อย</itemname>
+				<tooltiptext locale="en-US">F/OSS F.A.Q.</tooltiptext>
+				<tooltiptext locale="th-TH">คำถามที่พบบ่อย</tooltiptext>
+			</menuitem>	
+			<menuseparator />														
+			<searchitem>
+				<icon>edit-find</icon>
+				<url>https://launchpad.net/+search?field.text=</url>
+				<itemname locale="en-US" ak="H">Launchpad search</itemname>
+				<itemname locale="th-TH" ak="ข">ค้นหาข้อมูลจาก launchpad</itemname>
+				<tooltiptext locale="en-US">Launchpad search</tooltiptext>
+				<tooltiptext locale="th-TH">ค้นหาข้อมูลจากเว็บไซต์ launchpad</tooltiptext>
+				<searchlabel locale="en-US">Search on Launchpad site</searchlabel>
+				<searchlabel locale="th-TH">ค้นหาข้อมูลจากเว็บไซต์ launchpad</searchlabel>
+			</searchitem>
+		</content>
+	</main-menu>
+</easy-menu>
