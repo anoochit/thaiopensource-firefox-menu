@@ -1,0 +1,74 @@
+<!--
+ This file was automagically generated on 2009-02-01 03:13:18 UTC
+ by Easy Menu v. 1.0.3 ( http://easymenu.googlepages.com/ )
+ and is part of 'Thai Open Source'.
+
+ Thai Open Source is free software: you can redistribute it
+ and/or modify it under the terms of the GNU General Public License
+ as published by the Free Software Foundation, either version 3 of
+ the License, or (at your option) any later version.
+
+ Thai Open Source is distributed in the hope that it will be
+ useful, but WITHOUT ANY WARRANTY; without even the implied warranty
+ of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with Thai Open Source.
+ If not, see http://www.gnu.org/licenses/.
+
+ The copy of the GNU General Public License can be found here:
+ chrome://em_thaiopensourcemenu/content/GPLv3License.txt
+-->
+<!ENTITY em_thaiopensourcemenu.MenuName "ThaiOpenSource.org">
+<!ENTITY em_thaiopensourcemenu.MenuName_ "T">
+<!ENTITY em_thaiopensourcemenu.MenuName_t "Thai Open Source Menu">
+<!ENTITY em_thaiopensourcemenu.1 "Home">
+<!ENTITY em_thaiopensourcemenu.1_ "H">
+<!ENTITY em_thaiopensourcemenu.1_t "Thai Open Source Home's">
+<!ENTITY em_thaiopensourcemenu.3 "News">
+<!ENTITY em_thaiopensourcemenu.3_ "N">
+<!ENTITY em_thaiopensourcemenu.3_t "Hot News">
+<!ENTITY em_thaiopensourcemenu.4 "Review">
+<!ENTITY em_thaiopensourcemenu.4_ "E">
+<!ENTITY em_thaiopensourcemenu.4_t "Review">
+<!ENTITY em_thaiopensourcemenu.5 "How-To">
+<!ENTITY em_thaiopensourcemenu.5_ "H">
+<!ENTITY em_thaiopensourcemenu.5_t "How-to">
+<!ENTITY em_thaiopensourcemenu.6 "Interview">
+<!ENTITY em_thaiopensourcemenu.6_ "I">
+<!ENTITY em_thaiopensourcemenu.6_t "Interview">
+<!ENTITY em_thaiopensourcemenu.7 "Sucess Story">
+<!ENTITY em_thaiopensourcemenu.7_ "S">
+<!ENTITY em_thaiopensourcemenu.7_t "Sucess Story">
+<!ENTITY em_thaiopensourcemenu.8 "Article">
+<!ENTITY em_thaiopensourcemenu.8_ "A">
+<!ENTITY em_thaiopensourcemenu.8_t "Article">
+<!ENTITY em_thaiopensourcemenu.9 "Opinion">
+<!ENTITY em_thaiopensourcemenu.9_ "O">
+<!ENTITY em_thaiopensourcemenu.9_t "Opinion in F/OSS and non-F/OSS">
+<!ENTITY em_thaiopensourcemenu.10 "Event and Seminar">
+<!ENTITY em_thaiopensourcemenu.10_ "V">
+<!ENTITY em_thaiopensourcemenu.10_t "F/OSS event and seminar">
+<!ENTITY em_thaiopensourcemenu.11 "Gallery">
+<!ENTITY em_thaiopensourcemenu.11_ "G">
+<!ENTITY em_thaiopensourcemenu.11_t "F/OSS gallery">
+<!ENTITY em_thaiopensourcemenu.12 "Media">
+<!ENTITY em_thaiopensourcemenu.12_ "M">
+<!ENTITY em_thaiopensourcemenu.12_t "F/OSS media">
+<!ENTITY em_thaiopensourcemenu.13 "Directory">
+<!ENTITY em_thaiopensourcemenu.13_ "D">
+<!ENTITY em_thaiopensourcemenu.13_t "F/OSS directory">
+<!ENTITY em_thaiopensourcemenu.14 "Download">
+<!ENTITY em_thaiopensourcemenu.14_ "n">
+<!ENTITY em_thaiopensourcemenu.14_t "F/OSS download">
+<!ENTITY em_thaiopensourcemenu.15 "Link">
+<!ENTITY em_thaiopensourcemenu.15_ "L">
+<!ENTITY em_thaiopensourcemenu.15_t "F/OSS Link">
+<!ENTITY em_thaiopensourcemenu.16 "F.A.Q.">
+<!ENTITY em_thaiopensourcemenu.16_ "Q">
+<!ENTITY em_thaiopensourcemenu.16_t "F/OSS F.A.Q.">
+<!ENTITY em_thaiopensourcemenu.18 "Launchpad search">
+<!ENTITY em_thaiopensourcemenu.18_ "H">
+<!ENTITY em_thaiopensourcemenu.18_t "Launchpad search">
+<!ENTITY em_thaiopensourcemenu.18g "Search on Launchpad site">
